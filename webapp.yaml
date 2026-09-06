@@ -13,7 +13,7 @@ spec:
         app: web
     spec:
       containers:
-      - name: nginx
-        image: nginx:alpine
+      - name: webapp
+        image: irfan29818/terminal-portfolio:v1
         ports:
-        - containerPort: 80
+        - containerPort: 3000
