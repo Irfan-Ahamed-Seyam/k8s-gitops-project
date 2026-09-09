@@ -12,8 +12,14 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout Code
+      - name: Checkout Manifest Repo
         uses: actions/checkout@v4
+
+      - name: Checkout Application Code
+        uses: actions/checkout@v4
+        with:
+          repository: 'Irfan-Ahamed-Seyam/terminal-portfolio'
+          path: 'app'
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
@@ -24,7 +30,7 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./app
           push: true
           tags: irfan29818/terminal-portfolio:${{ github.sha }}
 
