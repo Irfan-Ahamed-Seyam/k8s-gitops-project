@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-web-app
-        image: irfan29818/terminal-portfolio:v1
+        image: irfan29818/terminal-portfolio:b435174d602f96fac4148776a2abe6d9c53be9ca
         ports:
         - containerPort: 3000
         env:
