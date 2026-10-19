@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: terminal-portfolio
+  namespace: argocd
+spec:
+  project: default
+  # Where the manifests come from
+  source:
+    repoURL: https://github.com/Irfan-Ahamed-Seyam/k8s-gitops-project.git
+    targetRevision: main
+    path: .
+  # Where to deploy them
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true      # delete from the cluster what's deleted from Git
+      selfHeal: true   # undo manual changes made directly in the cluster
