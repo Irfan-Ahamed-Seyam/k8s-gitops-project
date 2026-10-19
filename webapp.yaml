@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: my-web-app
-        image: irfan29818/terminal-portfolio:77ffe6325be30de61938e1999c028b6690aa8cb8
+        image: irfan29818/terminal-portfolio:d0d2ecf1f0b971bacf941f2a02827534bca24fb8
         ports:
         - name: http
           containerPort: 3000
